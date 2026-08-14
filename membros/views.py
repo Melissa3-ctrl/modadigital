@@ -42,3 +42,6 @@ def deletar_membro(request, id):
         return redirect('listar_membros')
     
     return render(request, "confirmar_delecao.html", {"membro": membro})
+
+def macacoes(request):
+    return render(request, 'macacoes.html')

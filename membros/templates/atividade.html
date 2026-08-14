@@ -12,9 +12,7 @@
     </style>
 </head>
 <body>
- 
-  <a href="{% url 'criar_membro' %}" class="btn-add"> Adicionar Novo Membro<a/>
-    <table>
+ <a href="{% url 'criar_membro' %}" class="btn-adicionar">Adicionar membro</a>
        <thead>
          <tr>
           
@@ -37,19 +35,19 @@
       <tbody>
         {% for mebro in membros %}
         <tr>
-            <td>{(membro.id)}</td>
-            <td>{(membro.firstname)}</td>
-            <td>{(membro.lastname)}</td>
-            <td>{(membro.telefone|defauld:"-")}</td>
-           <td>{(membro.data_ingresso|defult:"-")}</td>
+           <td>{{ membro.id }}</td>
+      <td>{{ membro.firstname }}</td>
+      <td>{{ membro.lastname }}</td>
+      <td>{{ membro.telefone|default:"-" }}</td>
+      <td>{{ membro.data_ingresso|default:"-" }}</td>
         <td>
 
         <a href= "{% url 'editar_membro' membro.id %}" class="btn-edit">Edita</a>
           <a href="{% url 'deletar_membro' membro.id %}" class="btn-delete">Excluir</a>
       </td>
     </tr>
-  {%empty %}
-  <try>
+  {% empty %}
+  <tr>
     <td colspan="6" style="text-align: cemter;"> Nenhum membro cadastrado.</td>
   </tr>
 {% endfor %}
