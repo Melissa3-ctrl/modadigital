@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ============================================ */
 /* CONFIGURAÇÃO GERAL */
 /* ============================================ */
@@ -441,10 +442,13 @@ body {
 /* GALERIA DE PRODUTOS */
 /* ============================================ */
 
+=======
+>>>>>>> 47bb5b9212c0ca6426b5460e4fb484bdf9bed241
 .galeria {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
+<<<<<<< HEAD
     padding: 20px 6%;
 }
 
@@ -484,10 +488,276 @@ body {
     font-size: 14px;
     line-height: 1.5;
     color: #666;
+=======
+    padding: 20px 40px;
+}
+
+.galeria > div {
+    background-color: white;
+    padding: 15px;/* ===== CONFIGURAÇÃO GERAL ===== */
+
+body {
+    margin: 0;
+    background-color: #f8f5f2;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+
+/* ===== CABEÇALHO ===== */
+
+header {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+
+/* ===== TÍTULO ===== */
+
+h2 {
+    margin: 35px 0;
+    text-align: center;
+    color: #4a403a;
+    letter-spacing: 1px;
+}
+
+
+/* ===== GALERIA ===== */
+
+.galeria {
+    display: grid;
+
+    /* 4 produtos por fileira */
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    padding: 20px 40px;
+}
+
+
+/* ===== CARD DO PRODUTO ===== */
+
+.produto {
+    background-color: white;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+
+    box-sizing: border-box;
+}
+
+
+/* Efeito ao passar o mouse */
+
+.produto:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ===== TODAS AS IMAGENS ===== */
+
+.galeria .produto img {
+    width: 100% !important;
+
+    height: 320px !important;
+
+    object-fit: cover !important;
+
+    display: block;
+
+    border-radius: 8px;
+
+    margin: 0 auto 15px auto;
+}
+
+
+/* ===== TÍTULO DOS PRODUTOS ===== */
+
+.produto h3 {
+    font-size: 18px;
+
+    color: #4a403a;
+
+    margin: 10px 0;
+}
+
+
+/* ===== DESCRIÇÕES ===== */
+
+.produto p {
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* ===== PREÇO ===== */
+
+.galeria mark {
+    background: none;
+
+    color: #b04a5a;
+
+    font-size: 18px;
+}
+
+
+/* ===== BOTÃO CARRINHO ===== */
+
+.type {
+    background-color: #3f3732;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+
+    transition: 0.3s;
+}
+
+.type:hover {
+    background-color: #8b6f61;
+}
+
+
+/* ===== BOTÃO COMPRAR ===== */
+
+button:not(.type) {
+    background-color: #b88989;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:not(.type):hover {
+    background-color: #8f6262;
+}
+
+
+/* ===== TABLET ===== */
+
+@media (max-width: 1100px) {
+
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* ===== TABLET MENOR ===== */
+
+@media (max-width: 800px) {
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+
+        padding: 20px;
+    }
+
+}
+
+
+/* ===== CELULAR ===== */
+
+@media (max-width: 550px) {
+
+    .galeria {
+        grid-template-columns: 1fr;
+
+        padding: 15px;
+    }
+
+}
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.galeria > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.galeria img {
+    width: 250px;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.03);
+}
+
+body {
+    margin: 0;
+    background-color: #f8f5f2;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+header {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    margin: 35px 0;
+    color: #4a403a;
+    letter-spacing: 1px;
+>>>>>>> 47bb5b9212c0ca6426b5460e4fb484bdf9bed241
 }
 
 .galeria mark {
     background: none;
+<<<<<<< HEAD
     color: #e91e63;
     font-size: 18px;
     font-weight: bold;
@@ -498,12 +768,24 @@ body {
     color: #fff;
     border: none;
     padding: 10px 20px;
+=======
+    color: #b04a5a;
+    font-size: 20px;
+}
+
+.type {
+    background-color: #3f3732;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+>>>>>>> 47bb5b9212c0ca6426b5460e4fb484bdf9bed241
     border-radius: 6px;
     cursor: pointer;
     margin-top: 10px;
     transition: 0.3s;
 }
 
+<<<<<<< HEAD
 .btn-carrinho:hover {
     background: #e91e63;
 }
@@ -526,27 +808,76 @@ body {
 /* ============================================ */
 /* AVALIAÇÕES */
 /* ============================================ */
+=======
+.type:hover {
+    background-color: #8b6f61;
+}
+
+button:not(.type) {
+    background-color: #b88989;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:not(.type):hover {
+    background-color: #8f6262;
+}
+
+@media (max-width: 900px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .galeria {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+}
+>>>>>>> 47bb5b9212c0ca6426b5460e4fb484bdf9bed241
 
 .avaliacoes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+<<<<<<< HEAD
     padding: 20px 6%;
 }
 
 .avaliacao {
     background: #fff8f6;
+=======
+    padding: 20px 40px;
+}
+
+.avaliacao {
+    background-color: #fff8f6;
+>>>>>>> 47bb5b9212c0ca6426b5460e4fb484bdf9bed241
     border: 1px solid #ead6d0;
     border-radius: 12px;
     padding: 20px;
     text-align: center;
+<<<<<<< HEAD
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+=======
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+>>>>>>> 47bb5b9212c0ca6426b5460e4fb484bdf9bed241
     transition: 0.3s;
 }
 
 .avaliacao:hover {
     transform: translateY(-5px);
+<<<<<<< HEAD
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
+=======
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+>>>>>>> 47bb5b9212c0ca6426b5460e4fb484bdf9bed241
 }
 
 .avaliacao img {
@@ -554,11 +885,16 @@ body {
     height: 80px;
     object-fit: cover;
     border-radius: 50%;
+<<<<<<< HEAD
     border: 3px solid #e91e63;
+=======
+    border: 3px solid #b88989;
+>>>>>>> 47bb5b9212c0ca6426b5460e4fb484bdf9bed241
     margin-bottom: 10px;
 }
 
 .avaliacao h3 {
+<<<<<<< HEAD
     color: #333;
     margin: 8px 0;
 }
@@ -875,5 +1211,27 @@ body {
     .modal-conteudo {
         padding: 20px;
         width: 95%;
+=======
+    color: #6b4f4f;
+    margin: 8px 0;
+}
+
+.avaliacao p {
+    color: #555;
+    line-height: 1.5;
+}
+
+.avaliacao .estrelas {
+    color: #FFD700;
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+/* Celular */
+@media (max-width: 700px) {
+    .avaliacoes {
+        grid-template-columns: 1fr;
+        padding: 20px;
+>>>>>>> 47bb5b9212c0ca6426b5460e4fb484bdf9bed241
     }
 }

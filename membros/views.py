@@ -43,8 +43,13 @@ def deletar_membro(request, id):
     
     return render(request, "confirmar_delecao.html", {"membro": membro})
 
+<<<<<<< HEAD
 def produtos(request):
     return render(request, 'produtos.html')
 
 def home(request):
     return render(request, 'home.html')
+=======
+def macacoes(request):
+    return render(request, 'macacoes.html')
+>>>>>>> 47bb5b9212c0ca6426b5460e4fb484bdf9bed241
