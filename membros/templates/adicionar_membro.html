@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Adicionar Novo Membro</h1>
+     <form method="POST"> {% csrf_token %}  <!-- Proteção contra CSRF --> 
+      <label for="primeironome">Primeiro Nome:</label>
+      <in put type="text" id="primeironome" name="primeironome" requi red><br>
+        <label for="ultimonome">Último Nome:</label>
+        <input type="text" id="ultimonome" name="ultimonome" required><br> 
+          <button type="submit">Salvar</button>
+     </form>
+
+        <h2>Lista de Membros</h2>
+    <a href ="{% url 'adicionar_membro' %}">Adicionar Novo Membro</a> 
+    
+     <ul> 
+    {% for membro in membros %} 
+    <li>{{ membro.primeironome }} {{ membro.ultimon ome }}</li> 
+    {% endfor %}
+     </ul>
+</body>
+</html>

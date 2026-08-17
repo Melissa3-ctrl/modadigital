@@ -1,0 +1,294 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moda Digital - Elegância e Estilo</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- ============================================ -->
+    <!-- HEADER -->
+    <!-- ============================================ -->
+
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="{% url 'home' %}" style="text-decoration: none; color: inherit;">✨ Moda Digital</a>
+        </div>
+
+        <nav>
+            <a href="{% url 'home' %}">🏠 Início</a>
+            <a href="{% url 'produtos' %}">👗 Produtos</a>
+            <a href="#sobre">💖 Sobre</a>
+            <a href="#vantagens">⭐ Vantagens</a>
+        </nav>
+
+        <div class="acoes">
+            <button type="button" onclick="abrirPesquisa()" title="Pesquisar">🔍</button>
+            <button type="button" onclick="abrirLogin()" title="Entrar" class="btn-usuario">👤 Entrar</button>
+            <button type="button" onclick="abrirCarrinho()" title="Carrinho">
+                🛍️ <span id="contador-carrinho">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- CARROSSEL - IMAGENS CORRIGIDAS -->
+    <!-- ============================================ -->
+
+    <section class="carrossel">
+        <div class="slide ativo">
+            <img src="{% static 'img/banner1.jpg' %}" alt="Banner 1">
+        </div>
+        <div class="slide">
+            <img src="{% static 'img/banner2.jpg' %}" alt="Banner 2">
+        </div>
+        <div class="slide">
+            <img src="{% static 'img/banner3.jpg' %}" alt="Banner 3">
+        </div>
+
+        <button class="anterior" onclick="mudarSlide(-1)">❮</button>
+        <button class="proximo" onclick="mudarSlide(1)">❯</button>
+
+        <div class="indicadores">
+            <span class="bolinha ativo" onclick="irParaSlide(0)"></span>
+            <span class="bolinha" onclick="irParaSlide(1)"></span>
+            <span class="bolinha" onclick="irParaSlide(2)"></span>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- VANTAGENS / DIFERENCIAIS -->
+    <!-- ============================================ -->
+
+    <section id="vantagens" class="vantagens">
+        <div class="vantagem">
+            <div class="vantagem-icone">🚚</div>
+            <h3>Frete Grátis</h3>
+            <p>Para compras acima de R$ 200,00</p>
+        </div>
+
+        <div class="vantagem">
+            <div class="vantagem-icone">🛡️</div>
+            <h3>Qualidade Garantida</h3>
+            <p>Produtos 100% originais</p>
+        </div>
+
+        <div class="vantagem">
+            <div class="vantagem-icone">↩️</div>
+            <h3>Troca Fácil</h3>
+            <p>7 dias para troca ou devolução</p>
+        </div>
+
+        <div class="vantagem">
+            <div class="vantagem-icone">💳</div>
+            <h3>Parcele em até 6x</h3>
+            <p>Sem juros no cartão de crédito</p>
+        </div>
+
+        <div class="vantagem">
+            <div class="vantagem-icone">⭐</div>
+            <h3>Clientes Satisfeitos</h3>
+            <p>Mais de 5.000 avaliações positivas</p>
+        </div>
+
+        <div class="vantagem">
+            <div class="vantagem-icone">📦</div>
+            <h3>Entrega Rápida</h3>
+            <p>Enviamos em até 24h</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CHAMADA PRINCIPAL -->
+    <!-- ============================================ -->
+
+    <section class="destaque">
+        <h1>Moda Digital</h1>
+        <p>Elegância, estilo e sofisticação para todos os momentos.</p>
+        <a href="{% url 'produtos' %}" class="botao-comprar">Conheça nossa coleção</a>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SOBRE NÓS -->
+    <!-- ============================================ -->
+
+    <section id="sobre" class="sobre">
+        <h2>💖 Sobre a Moda Digital</h2>
+        <p>
+            A Moda Digital nasceu com o propósito de levar elegância e conforto para o dia a dia das mulheres modernas.
+            Nossa coleção reúne macacões, bolsas e saltos com design exclusivo e qualidade impecável.
+        </p>
+        <p>
+            Cada peça é pensada para realçar a beleza e a personalidade de quem veste, com tecidos selecionados
+            e modelagens que valorizam todos os tipos de corpo.
+        </p>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PRODUTOS EM DESTAQUE -->
+    <!-- ============================================ -->
+
+    <section class="destaques-produtos">
+        <h2>🌟 Produtos em Destaque</h2>
+        <div class="galeria-destaques">
+
+            <div class="produto-destaque">
+                <img src="{% static 'img/macazul.jpeg' %}" alt="Macacão Azul">
+                <h3>Macacão Azul-Marinho</h3>
+                <p class="preco">R$ 249,90</p>
+                <button class="btn-carrinho" onclick="adicionarProdutoTeste('Macacão Azul-Marinho', 249.90)">🛒 Adicionar</button>
+            </div>
+
+            <div class="produto-destaque">
+                <img src="{% static 'img/macpreto.jpeg.jpeg' %}" alt="Macacão Preto">
+                <h3>Macacão Clássico Preto</h3>
+                <p class="preco">R$ 99,90</p>
+                <button class="btn-carrinho" onclick="adicionarProdutoTeste('Macacão Clássico Preto', 99.90)">🛒 Adicionar</button>
+            </div>
+
+            <div class="produto-destaque">
+                <img src="{% static 'img/macvinho.jpeg' %}" alt="Macacão Vinho">
+                <h3>Macacão Vinho</h3>
+                <p class="preco">R$ 99,90</p>
+                <button class="btn-carrinho" onclick="adicionarProdutoTeste('Macacão Vinho', 99.90)">🛒 Adicionar</button>
+            </div>
+
+            <div class="produto-destaque">
+                <img src="{% static 'img/macjeans.jpeg.jpeg' %}" alt="Macacão Jeans">
+                <h3>Macacão Jeans</h3>
+                <p class="preco">R$ 199,90</p>
+                <button class="btn-carrinho" onclick="adicionarProdutoTeste('Macacão Jeans', 199.90)">🛒 Adicionar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- NEWSLETTER -->
+    <!-- ============================================ -->
+
+    <section class="newsletter">
+        <h2>📩 Receba novidades</h2>
+        <p>Cadastre-se e ganhe 10% OFF na primeira compra!</p>
+        <div class="newsletter-form">
+            <input type="email" placeholder="Seu melhor e-mail">
+            <button type="button">Quero ganhar 10% OFF</button>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- RODAPÉ -->
+    <!-- ============================================ -->
+
+    <footer class="rodape">
+        <div class="rodape-conteudo">
+            <div class="rodape-coluna">
+                <h4>✨ Moda Digital</h4>
+                <p>Elegância e estilo para todos os momentos.</p>
+                <div class="redes-sociais">
+                    <span>📸</span>
+                    <span>📌</span>
+                    <span>🎵</span>
+                    <span>📘</span>
+                </div>
+            </div>
+
+            <div class="rodape-coluna">
+                <h4>Institucional</h4>
+                <a href="#sobre">Sobre nós</a>
+            </div>
+
+            <div class="rodape-coluna">
+                <h4>Atendimento</h4>
+                <a href="#" onclick="abrirContato()">📧 contato@modadigital.com.br</a>
+                <a href="#" onclick="abrirContato()">📱 (11) 99999-9999</a>
+                <p>🕐 Seg-Sex: 9h às 18h</p>
+                <p>💬 Respondemos em até 24h</p>
+            </div>
+
+            <div class="rodape-coluna">
+                <h4>Formas de Pagamento</h4>
+                <div class="pagamentos">
+                    <span>💳</span>
+                    <span>🏦</span>
+                    <span>📱</span>
+                    <span>💲</span>
+                </div>
+                <p style="font-size: 12px; color: #999; margin-top: 10px;">
+                    Parcele em até 6x sem juros
+                </p>
+            </div>
+        </div>
+
+        <div class="rodape-bottom">
+            <p>© 2026 Moda Digital — Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- MODAIS -->
+    <!-- ============================================ -->
+
+    <!-- MODAL PESQUISA -->
+    <div id="modalPesquisa" class="modal">
+        <div class="modal-conteudo">
+            <button class="fechar" onclick="fecharPesquisa()">×</button>
+            <h2>🔍 Pesquisar produtos</h2>
+            <input type="text" id="campoPesquisa" placeholder="Digite o nome do produto...">
+            <button onclick="pesquisarProduto()">Pesquisar</button>
+            <div id="resultadoPesquisa"></div>
+        </div>
+    </div>
+
+    <!-- MODAL CARRINHO -->
+    <div id="modalCarrinho" class="modal">
+        <div class="modal-conteudo">
+            <button class="fechar" onclick="fecharCarrinho()">×</button>
+            <h2>🛍️ Meu Carrinho</h2>
+            <div id="listaCarrinho">
+                <p>Seu carrinho está vazio.</p>
+            </div>
+            <h3>Total: R$ <span id="totalCarrinho">0,00</span></h3>
+            <button onclick="finalizarCompra()">Finalizar compra</button>
+        </div>
+    </div>
+
+    <!-- MODAL LOGIN -->
+    <div id="modalLogin" class="modal">
+        <div class="modal-conteudo">
+            <button class="fechar" onclick="fecharLogin()">×</button>
+            <h2>👤 Entrar</h2>
+            <input type="email" id="emailLogin" placeholder="Seu e-mail">
+            <input type="password" id="senhaLogin" placeholder="Sua senha">
+            <button onclick="fazerLogin()">Entrar</button>
+            <div style="text-align: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+                <p style="color: #666;">Não tem conta?</p>
+                <button onclick="fecharLogin(); abrirCadastro();" style="background: transparent; color: #e91e63; border: 2px solid #e91e63; padding: 8px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">Cadastrar-se</button>
+            </div>
+            <p id="mensagemLogin" style="text-align: center; margin-top: 10px;"></p>
+        </div>
+    </div>
+
+    <!-- MODAL CADASTRO -->
+    <div id="modalCadastro" class="modal">
+        <div class="modal-conteudo">
+            <button class="fechar" onclick="fecharCadastro()">×</button>
+            <h2>📝 Cadastre-se</h2>
+            <input type="text" id="nomeCadastro" placeholder="Seu nome">
+            <input type="email" id="emailCadastro" placeholder="Seu e-mail">
+            <input type="password" id="senhaCadastro" placeholder="Sua senha (mínimo 6 caracteres)">
+            <button onclick="cadastrarUsuario()">Cadastrar</button>
+            <p id="mensagemCadastro" style="text-align: center; margin-top: 10px;"></p>
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

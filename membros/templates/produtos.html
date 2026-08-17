@@ -1,0 +1,574 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>🛍️ Moda Digital 🛍️</title>
+</head>
+
+<body>
+
+<!-- ============================================ -->
+<!-- CABEÇALHO COM BOTÃO VOLTAR -->
+<!-- ============================================ -->
+
+<header class="cabecalho">
+    <div class="logo">
+        <a href="{% url 'home' %}" style="text-decoration: none; color: inherit;">✨ Moda Digital</a>
+    </div>
+
+    <nav>
+        <a href="{% url 'home' %}">🏠 Início</a>
+        <a href="{% url 'produtos' %}" style="color: #e91e63; font-weight: bold;">👗 Produtos</a>
+        <a href="{% url 'home' %}#sobre">💖 Sobre</a>
+        <a href="{% url 'home' %}#vantagens">⭐ Vantagens</a>
+    </nav>
+
+    <div class="acoes">
+        <button type="button" onclick="abrirPesquisa()" title="Pesquisar">🔍</button>
+        <button type="button" onclick="abrirLogin()" title="Entrar" class="btn-usuario">👤 Entrar</button>
+        <button type="button" onclick="abrirCarrinho()" title="Carrinho">
+            🛍️ <span id="contador-carrinho">0</span>
+        </button>
+    </div>
+</header>
+
+<main>
+
+    <section>
+
+        <h2 style="text-align: center; margin: 40px 0 20px;">🤎✨ MACACÃO PANTALONA EM LINHO ✨🤎</h2>
+
+        <div class="galeria">
+
+            <div class="produto">
+                <img src="{% static 'img/macazul.jpeg' %}" alt="Macacão Azul-Marinho">
+
+                <h3>Macacão Feminino Azul-Marinho</h3>
+
+                <p>
+                    Modelo elegante com mangas curtas, cintura marcada
+                    e calça pantalona. Ideal para trabalho e eventos.
+                    <br>
+                    Tamanhos: <strong>P • M • G • GG</strong>
+                </p>
+
+                <p>Cor: Azul-marinho</p>
+
+                <p>
+                    <del>De <mark>R$ 399,90</mark></del>
+                    <br>
+                    Por <ins>R$ 249,90</ins>
+                </p>
+
+                <button class="type btn-carrinho" type="button">
+                    🛒 Adicionar ao Carrinho
+                </button>
+
+                <br><br>
+
+                <button class="btn-comprar" type="button">
+                    Comprar agora
+                </button>
+            </div>
+
+
+            <div class="produto">
+                <img src="{% static 'img/macbacate.jpeg.jpeg' %}" alt="Macacão Verde">
+
+                <h3>Macacão Feminino Utility Verde</h3>
+
+                <p>
+                    Modelo moderno com mangas longas, gola tradicional,
+                    bolsos funcionais e cintura ajustada. Ideal para
+                    produções casuais e sofisticadas.
+                    <br>
+                    Tamanhos: <strong>P • M • G • GG</strong>
+                </p>
+
+                <p>Cor: Verde-militar</p>
+
+                <p>
+                    <del>De <mark>R$ 199,90</mark></del>
+                    <br>
+                    Por <ins>R$ 149,90</ins>
+                </p>
+
+                <button class="type btn-carrinho" type="button">
+                    🛒 Adicionar ao Carrinho
+                </button>
+
+                <br><br>
+
+                <button class="btn-comprar" type="button">
+                    Comprar agora
+                </button>
+            </div>
+
+
+            <div class="produto">
+                <img src="{% static 'img/macjeans.jpeg.jpeg' %}" alt="Macacão Jeans">
+
+                <h3>Macacão Feminino Jeans</h3>
+
+                <p>
+                    Modelo moderno sem mangas, com decote quadrado,
+                    fechamento frontal por botões e calça reta.
+                    Uma opção prática e versátil.
+                    <br>
+                    Tamanhos: <strong>P • M • G • GG</strong>
+                </p>
+
+                <p>Cor: Azul jeans médio</p>
+
+                <p>
+                    <del>De <mark>R$ 249,90</mark></del>
+                    <br>
+                    Por <ins>R$ 199,90</ins>
+                </p>
+
+                <button class="type btn-carrinho" type="button">
+                    🛒 Adicionar ao Carrinho
+                </button>
+
+                <br><br>
+
+                <button class="btn-comprar" type="button">
+                    Comprar agora
+                </button>
+            </div>
+
+
+            <div class="produto">
+                <img src="{% static 'img/maclistrado.jpeg.jpeg' %}" alt="Macacão Listrado">
+
+                <h3>Macacão Feminino Estampado</h3>
+
+                <p>
+                    Modelo elegante com frente única, cintura marcada
+                    e calça pantalona de caimento leve. Perfeito para
+                    ocasiões especiais.
+                    <br>
+                    Tamanhos: <strong>P • M • G • GG</strong>
+                </p>
+
+                <p>Cor: Cinza-claro com estampa preta</p>
+
+                <p>
+                    <del>De <mark>R$ 149,90</mark></del>
+                    <br>
+                    Por <ins>R$ 99,90</ins>
+                </p>
+
+                <button class="type btn-carrinho" type="button">
+                    🛒 Adicionar ao Carrinho
+                </button>
+
+                <br><br>
+
+                <button class="btn-comprar" type="button">
+                    Comprar agora
+                </button>
+            </div>
+
+
+            <div class="produto">
+                <img src="{% static 'img/macnude.jpeg.jpeg' %}" alt="Macacão Nude">
+
+                <h3>Macacão Feminino Social Bege</h3>
+
+                <p>
+                    Modelo sofisticado com corte transpassado, sem mangas,
+                    cinto na cintura e calça reta. Ideal para produções
+                    elegantes e modernas.
+                    <br>
+                    Tamanhos: <strong>P • M • G • GG</strong>
+                </p>
+
+                <p>Cor: Bege-nude</p>
+
+                <p>
+                    <del>De <mark>R$ 149,90</mark></del>
+                    <br>
+                    Por <ins>R$ 99,90</ins>
+                </p>
+
+                <button class="type btn-carrinho" type="button">
+                    🛒 Adicionar ao Carrinho
+                </button>
+
+                <br><br>
+
+                <button class="btn-comprar" type="button">
+                    Comprar agora
+                </button>
+            </div>
+
+
+            <div class="produto">
+                <img src="{% static 'img/macoutrobnranco.jpeg.jpeg' %}" alt="Macacão Branco">
+
+                <h3>Macacão Feminino Social Branco</h3>
+
+                <p>
+                    Modelo sofisticado com mangas longas, decote em V,
+                    cinto com fivela e calça pantalona. Ideal para festas
+                    e eventos especiais.
+                    <br>
+                    Tamanhos: <strong>P • M • G • GG</strong>
+                </p>
+
+                <p>Cor: Branco/off-white</p>
+
+                <p>
+                    <del>De <mark>R$ 149,90</mark></del>
+                    <br>
+                    Por <ins>R$ 99,90</ins>
+                </p>
+
+                <button class="type btn-carrinho" type="button">
+                    🛒 Adicionar ao Carrinho
+                </button>
+
+                <br><br>
+
+                <button class="btn-comprar" type="button">
+                    Comprar agora
+                </button>
+            </div>
+
+
+            <div class="produto">
+                <img src="{% static 'img/macpretoo.jpeg' %}" alt="Macacão Preto">
+
+                <h3>Macacão Feminino Clássico Preto</h3>
+
+                <p>
+                    Modelo elegante com mangas curtas, gola clássica,
+                    bolsos frontais, faixa para amarração e calça reta.
+                    Uma peça versátil para diversas ocasiões.
+                    <br>
+                    Tamanhos: <strong>P • M • G • GG</strong>
+                </p>
+
+                <p>Cor: Preto</p>
+
+                <p>
+                    <del>De <mark>R$ 149,90</mark></del>
+                    <br>
+                    Por <ins>R$ 99,90</ins>
+                </p>
+
+                <button class="type btn-carrinho" type="button">
+                    🛒 Adicionar ao Carrinho
+                </button>
+
+                <br><br>
+
+                <button class="btn-comprar" type="button">
+                    Comprar agora
+                </button>
+            </div>
+
+
+            <div class="produto">
+                <img src="{% static 'img/macvinho.jpeg' %}" alt="Macacão Vinho">
+
+                <h3>Macacão Feminino Vinho</h3>
+
+                <p>
+                    Modelo elegante sem mangas, com decote em V,
+                    faixa para amarração na cintura e calça pantalona.
+                    Ideal para ocasiões especiais.
+                    <br>
+                    Tamanhos: <strong>P • M • G • GG</strong>
+                </p>
+
+                <p>Cor: Vinho/bordô</p>
+
+                <p>
+                    <del>De <mark>R$ 149,90</mark></del>
+                    <br>
+                    Por <ins>R$ 99,90</ins>
+                </p>
+
+                <button class="type btn-carrinho" type="button">
+                    🛒 Adicionar ao Carrinho
+                </button>
+
+                <br><br>
+
+                <button class="btn-comprar" type="button">
+                    Comprar agora
+                </button>
+            </div>
+
+
+            <div class="produto">
+                <img src="{% static 'img/macpreto.jpeg.jpeg' %}" alt="Macacão Preto Elegance">
+
+                <h3>Macacão Elegance Assimétrico</h3>
+
+                <p>
+                    Modelo moderno com design sofisticado, cintura marcada,
+                    bolsos funcionais e caimento confortável. Perfeito para
+                    produções casuais e elegantes.
+                    <br>
+                    Tamanhos: <strong>P • M • G • GG</strong>
+                </p>
+
+                <p>Cor: Preto</p>
+
+                <p>
+                    <del>De <mark>R$ 149,90</mark></del>
+                    <br>
+                    Por <ins>R$ 99,90</ins>
+                </p>
+
+                <button class="type btn-carrinho" type="button">
+                    🛒 Adicionar ao Carrinho
+                </button>
+
+                <br><br>
+
+                <button class="btn-comprar" type="button">
+                    Comprar agora
+                </button>
+            </div>
+
+
+            <div class="produto">
+                <img src="{% static 'img/macoutroverde.jpeg.jpeg' %}" alt="Macacão Verde">
+
+                <h3>Macacão Utility Casual</h3>
+
+                <p>
+                    Modelo moderno com design elegante, cintura marcada
+                    e caimento refinado. Uma peça versátil para produções
+                    do dia a dia e ocasiões especiais.
+                    <br>
+                    Tamanhos: <strong>P • M • G • GG</strong>
+                </p>
+
+                <p>Cor: Verde</p>
+
+                <p>
+                    <del>De <mark>R$ 149,90</mark></del>
+                    <br>
+                    Por <ins>R$ 99,90</ins>
+                </p>
+
+                <button class="type btn-carrinho" type="button">
+                    🛒 Adicionar ao Carrinho
+                </button>
+
+                <br><br>
+
+                <button class="btn-comprar" type="button">
+                    Comprar agora
+                </button>
+            </div>
+
+
+            <div class="produto">
+                <img src="{% static 'img/macverme.jpeg.jpeg' %}" alt="Macacão Vermelho">
+
+                <h3>Macacão Social Vermelho</h3>
+
+                <p>
+                    Modelo elegante e sofisticado com corte reto,
+                    design moderno e caimento impecável. Ideal para
+                    festas, eventos e ocasiões especiais.
+                    <br>
+                    Tamanhos: <strong>P • M • G • GG</strong>
+                </p>
+
+                <p>Cor: Vermelho</p>
+
+                <p>
+                    <del>De <mark>R$ 149,90</mark></del>
+                    <br>
+                    Por <ins>R$ 99,90</ins>
+                </p>
+
+                <button class="type btn-carrinho" type="button">
+                    🛒 Adicionar ao Carrinho
+                </button>
+
+                <br><br>
+
+                <button class="btn-comprar" type="button">
+                    Comprar agora
+                </button>
+            </div>
+
+
+            <div class="produto">
+                <img src="{% static 'img/macrosaaa.jpeg.jpeg' %}" alt="Macacão Rosa">
+
+                <h3>Macacão Rosa-Claro Fluido</h3>
+
+                <p>
+                    Modelo delicado e sofisticado com corte elegante,
+                    modelagem confortável e caimento fluido. Ideal para
+                    produções modernas e femininas.
+                    <br>
+                    Tamanhos: <strong>P • M • G • GG</strong>
+                </p>
+
+                <p>Cor: Rosa-claro</p>
+
+                <p>
+                    <del>De <mark>R$ 149,90</mark></del>
+                    <br>
+                    Por <ins>R$ 99,90</ins>
+                </p>
+
+                <button class="type btn-carrinho" type="button">
+                    🛒 Adicionar ao Carrinho
+                </button>
+
+                <br><br>
+
+                <button class="btn-comprar" type="button">
+                    Comprar agora
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2 style="text-align: center;">
+            💕 O que nossas clientes dizem
+        </h2>
+
+        <div class="avaliacoes">
+
+            <div class="avaliacao">
+
+                <img src="{% static 'img/domis.jpeg' %}" alt="Domingas">
+
+                <h3>Domingas Gabriela</h3>
+
+                <p class="estrelas">★★★★★</p>
+
+                <p>
+                    Amei minha compra! O macacão é lindo,
+                    confortável e o tecido tem uma qualidade
+                    incrível. Com certeza vou comprar novamente! 💕
+                </p>
+
+            </div>
+
+
+            <div class="avaliacao">
+
+                <img src="{% static 'img/cliente2.jpeg' %}" alt="Cliente">
+
+                <h3>Manuela Dantas</h3>
+
+                <p class="estrelas">★★★★★</p>
+
+                <p>
+                    Fiquei apaixonada pela peça! O caimento
+                    ficou perfeito e a entrega foi super rápida.
+                    Amei a experiência com a Moda Digital! ✨
+                </p>
+
+            </div>
+
+
+            <div class="avaliacao">
+
+                <img src="{% static 'img/cliente3.jpeg' %}" alt="Cliente">
+
+                <h3>Camila Santos</h3>
+
+                <p class="estrelas">★★★★★</p>
+
+                <p>
+                    Produto maravilhoso e exatamente como
+                    aparece no site. Muito elegante, confortável
+                    e bem feito. Recomendo muito! 🛍️❤️
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ============================================ -->
+<!-- MODAIS -->
+<!-- ============================================ -->
+
+<!-- MODAL PESQUISA -->
+<div id="modalPesquisa" class="modal">
+    <div class="modal-conteudo">
+        <button class="fechar" onclick="fecharPesquisa()">×</button>
+        <h2>🔍 Pesquisar produtos</h2>
+        <input type="text" id="campoPesquisa" placeholder="Digite o nome do produto...">
+        <button onclick="pesquisarProduto()">Pesquisar</button>
+        <div id="resultadoPesquisa"></div>
+    </div>
+</div>
+
+<!-- MODAL CARRINHO -->
+<div id="modalCarrinho" class="modal">
+    <div class="modal-conteudo">
+        <button class="fechar" onclick="fecharCarrinho()">×</button>
+        <h2>🛍️ Meu Carrinho</h2>
+        <div id="listaCarrinho">
+            <p>Seu carrinho está vazio.</p>
+        </div>
+        <h3>Total: R$ <span id="totalCarrinho">0,00</span></h3>
+        <button onclick="finalizarCompra()">Finalizar compra</button>
+    </div>
+</div>
+
+<!-- MODAL LOGIN -->
+<div id="modalLogin" class="modal">
+    <div class="modal-conteudo">
+        <button class="fechar" onclick="fecharLogin()">×</button>
+        <h2>👤 Entrar</h2>
+        <input type="email" id="emailLogin" placeholder="Seu e-mail">
+        <input type="password" id="senhaLogin" placeholder="Sua senha">
+        <button onclick="fazerLogin()">Entrar</button>
+        <div style="text-align: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+            <p style="color: #666;">Não tem conta?</p>
+            <button onclick="fecharLogin(); abrirCadastro();" style="background: transparent; color: #e91e63; border: 2px solid #e91e63; padding: 8px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">Cadastrar-se</button>
+        </div>
+        <p id="mensagemLogin" style="text-align: center; margin-top: 10px;"></p>
+    </div>
+</div>
+
+<!-- MODAL CADASTRO -->
+<div id="modalCadastro" class="modal">
+    <div class="modal-conteudo">
+        <button class="fechar" onclick="fecharCadastro()">×</button>
+        <h2>📝 Cadastre-se</h2>
+        <input type="text" id="nomeCadastro" placeholder="Seu nome">
+        <input type="email" id="emailCadastro" placeholder="Seu e-mail">
+        <input type="password" id="senhaCadastro" placeholder="Sua senha (mínimo 6 caracteres)">
+        <button onclick="cadastrarUsuario()">Cadastrar</button>
+        <p id="mensagemCadastro" style="text-align: center; margin-top: 10px;"></p>
+    </div>
+</div>
+
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
